@@ -37,7 +37,7 @@ int main()
     AVPacket *avpacket              = av_packet_alloc();
 
     /* Open video source */
-    err = avformat_open_input(&fmt_ctx, "udp://localhost:1337", NULL, NULL);
+    err = avformat_open_input(&fmt_ctx, "udp://localhost:1337?overrun_nonfatal=1", NULL, NULL);
     if (err != 0) {
         return 1;
     }
